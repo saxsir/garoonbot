@@ -6,12 +6,6 @@ NOW := $(shell date +%Y-%m-%d-%H:%M:%S)
 help: ## Show help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-users: ## Show garoon user ids
-	@echo "kanufy: 812"
-	@echo "missann: 813"
-	@echo "nk5: 814"
-	@echo "Rina Ohmi: 546"
-
 deps: ## Install dependencies, need pyenv
 	which pyenv || exit
 	pyenv install -s 2.7.11
